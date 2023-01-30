@@ -1,0 +1,26 @@
+<h1>List of Users</h1>
+
+<!-- render values onto webpage -->
+
+<%# "john123" %>
+<%= {username:'amy123'} [:username]%>
+
+<!-- execute ruby code -->
+<!-- conditionals  -->
+
+<% if false %> 
+    <p> This is true!</p>
+<% else %> 
+    <p> Actually this was false!</p>
+<% end %>
+
+<!-- loops -->
+<%  [{username: 'john123'}, {username: 'jack123'}, {username: 'jane123'}, {username: 'josh123'}].map do |user| %> 
+    <%= user[:username] %>
+<% end %>
+
+<!-- helper methods - create forms/links elemenents  -->
+
+<%= link_to "Navigate to the about path", about_us_path %>
+
+

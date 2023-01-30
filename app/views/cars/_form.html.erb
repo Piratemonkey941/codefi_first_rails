@@ -1,4 +1,6 @@
-<%= form_with(model: car) do |form| %>
+<%
+=begin%>
+ <%= form_with(model: car) do |form| %>
   <% if car.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
@@ -29,4 +31,6 @@
   <div>
     <%= form.submit %>
   </div>
-<% end %>
+<% end %> 
+<%
+=end%>

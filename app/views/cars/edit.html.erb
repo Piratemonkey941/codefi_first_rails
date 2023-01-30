@@ -1,4 +1,6 @@
-<h1>Editing car</h1>
+<%
+=begin%>
+ <h1>Editing car</h1>
 
 <%= render "form", car: @car %>
 
@@ -7,4 +9,6 @@
 <div>
   <%= link_to "Show this car", @car %> |
   <%= link_to "Back to cars", cars_path %>
-</div>
+</div> 
+<%
+=end%>
