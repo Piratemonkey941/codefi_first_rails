@@ -1,5 +1,14 @@
 <h1> Create a New Blog </h1>
 
+<% if @blog.errors.any? %>
+    <% @blog.errors.full_messages.each do |message| %>
+        <div style="color: red">    
+            <%= message %>
+        </div>
+    <% end %>
+<% end %>
+
+
 <%= form_with(model: @blog) do |form|%>
 <div>
 <%= form.label "Title", style: "display: block"%>
@@ -15,6 +24,6 @@
 </div>
 
 <% end %>
-
+<br>
 <%= link_to "Go back to blogs", blogs_path %>
 <br>

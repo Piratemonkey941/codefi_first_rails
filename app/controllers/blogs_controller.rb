@@ -9,13 +9,14 @@ class BlogsController < ApplicationController
 
     def create
         @blog = Blog.new(title: params[:blog][:title], description: params[:blog][:description])
-        
+
         # if blog was saved redirect to index 
         if @blog.save 
             redirect_to blogs_path
         else 
-            render :new
+            render :new, status: :unprocessable_entity
         end
         # else re-renmder new will be false if validates is not filled out
+        # render :new, status: :unprocessable_entity
     end
 end
