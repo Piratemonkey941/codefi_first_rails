@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  root 'static_pages#landing'
-  
+  # root 'static_pages#landing'
+
+  root to: redirect('/blogs')
+# ============================
+
+
+resources :blogs
+
+# ============================
   get 'about-us', to: 'static_pages#about_us'
 
   get 'sign-up', to: 'users#new'
@@ -10,9 +17,9 @@ end
 
 
 
-  # resources :blogs
-  # about_us links to views/static_pages and then to the about_us.html.rb
-  # get/url will always be a dash, to/url will always be snakecase
+# resources :blogs
+# about_us links to views/static_pages and then to the about_us.html.rb
+# get/url will always be a dash, to/url will always be snakecase
 #   #index
 # get 'blogs', to: "blogs#index"
 
