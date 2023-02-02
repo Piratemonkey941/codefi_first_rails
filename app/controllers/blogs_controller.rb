@@ -8,6 +8,14 @@ class BlogsController < ApplicationController
     end
 
     def create
-        # @blog = Blog.new
+        @blog = Blog.new(title: params[:blog][:title], description: params[:blog][:description])
+        
+        # if blog was saved redirect to index 
+        if @blog.save 
+            redirect_to blogs_path
+        else 
+            render :new
+        end
+        # else re-renmder new will be false if validates is not filled out
     end
 end
