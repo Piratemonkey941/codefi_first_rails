@@ -21,7 +21,7 @@
         <th><%= blog.id %></th>
         <th><%= blog.title %></th>
         <th><%= blog.description %></th>
-        <th>Show Edit Delete</th>    
+        <th><%= link_to "Show", blog_path(blog)  %>Edit Delete</th>    
     </tr>
     <% end %>
 
