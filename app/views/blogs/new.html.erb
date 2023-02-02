@@ -1,0 +1,20 @@
+<h1> Create a New Blog </h1>
+
+<%= form_with(model: @blog) do |form|%>
+<div>
+<%= form.label "Title", style: "display: block"%>
+<%= form.text_field :title%>
+</div>
+<div>
+<%= form.label "Description", style: "display: block"%>
+<%= form.text_field :description%>
+</div>
+<div>
+<%= form.submit%>
+
+</div>
+
+<% end %>
+
+<%= link_to "Go back to blogs", blogs_path %>
+<br>
