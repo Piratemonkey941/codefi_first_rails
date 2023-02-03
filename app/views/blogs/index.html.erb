@@ -9,19 +9,17 @@
         <th>Operations</th>
     
     </tr>
-    <tr>
-        <th>1</th>
-        <th>Lorum Ipsum Title</th>
-        <th>Lorum Ipsum Description</th>
-        <th>Show Edit Delete</th>    
-    </tr>
 
     <% @blogs.each do |blog| %>
     <tr>
         <th><%= blog.id %></th>
         <th><%= blog.title %></th>
         <th><%= blog.description %></th>
-        <th><%= link_to "Show", blog_path(blog)  %>Edit Delete</th>    
+        <th>
+            <%= link_to "Show", blog_path(blog)  %> 
+            <%= link_to "Edit", edit_blog_path(blog)  %> 
+            <%= button_to "Delete", blog_path(blog), method: :delete %>
+        </th>    
     </tr>
     <% end %>
 
