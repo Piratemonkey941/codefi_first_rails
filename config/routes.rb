@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   # root 'static_pages#landing'
 
-  root to: redirect('/blogs')
+  root to: "pages#home"
 # ============================
 
 
 resources :blogs
+
+# ============================
+
+get 'books', to: 'books#index'
 
 # ============================
   get 'about-us', to: 'static_pages#about_us'

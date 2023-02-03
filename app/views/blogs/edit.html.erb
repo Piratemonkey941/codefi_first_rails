@@ -8,26 +8,7 @@
 <% end %>
 
 
-<%= form_with(model: @blog) do |form| %>
-
-    <div>
-        <%= form.label "title", style: "display:block" %>
-        <%= form.text_field "title" %>
-
-    </div>
-<br>
-    <div>
-        <%= form.label "description", style: "display:block" %>
-        <%= form.text_area "description" %>
-
-    </div>
-<br>
-    <div>
-        <%= form.submit "update" %>
-        
-
-    </div>
-<% end%>
+<%= render partial: 'blog_form', locals: {blog: @blog} %>
 
 <br>
 <%= link_to "Go back to blogs", blogs_path %>
