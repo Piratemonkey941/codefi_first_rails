@@ -51,16 +51,6 @@ class BlogsController < ApplicationController
             render :edit, status: :unprocessable_entity
         end
     end
-#====================================================================
-
-    def destroy
-        @blog = Blog.find(params[:id])
-
-        @blog.destroy
-
-        redirect_to blogs_path
-    end
-        
 
 
 end
